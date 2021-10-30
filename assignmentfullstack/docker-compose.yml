@@ -1,0 +1,50 @@
+version: '3'
+services:
+  
+  client:
+    build: .
+    stdin_open: true
+    ports:
+      - 3000:3000
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+      - node-modules: '/app/node_modules'
+    networks:
+      - frontend 
+    links:
+      - api-server
+    command: npm start   
+    
+  api-server:
+    build: ./dbfiles
+    ports:
+      - "5000:5000"
+    command: npm run dev
+    volumes:
+      - ./dbfiles:/srv/app/server/src
+    networks:
+      - backend
+      - frontend
+    depends_on:
+      - sql-server-db
+
+  sql-server-db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "foo"
+      ACCEPT_EULA: "Y"
+    networks:
+      - backend
+
+networks:
+  backend:
+  frontend:
+  #my-app:
+    #driver: bridge
+volumes:
+  node-modules:
+  #db:
+    #driver: local
