@@ -20,8 +20,8 @@ The Database Schema:
               Gender varchar(50) ) 
 
 -------------------------------------------------------------------------
-{
+
 https://www.youtube.com/watch?v=jzBgZjOJJnY
 https://www.youtube.com/watch?v=Uh2JCSUjA_E
 https://www.youtube.com/watch?v=rK6oTTbVbcY
-}
+
