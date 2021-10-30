@@ -1,7 +1,8 @@
 # SWE550-as1 ... Nourah Alanquary نوره العنقري (441204445)
 
 
-This project is built based on (React-js, Express-js, Nodejs, Sql): 
+This project is built based on (React-js, Express-js, Nodejs, Sql).
+
 Connecting SQL Server to a NodeJS / Express JS backend of a React JS app.
 
 
